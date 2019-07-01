@@ -66,7 +66,7 @@
 
 	<form #newPubForm="ngForm" (ngSubmit)="onSubmit(newPubForm, $event);" class="col-lg-10">
 		<p>
-			<label>¿Que estas pensando hoy?</label>
+			<label>Realiza una publicación:</label>
 			<textarea name="text" #text="ngModel" [(ngModel)]="publication.text" class="form-control" required></textarea>
 			<span *ngIf="!text.valid && text.touched">
 				El texto de la publicación es obliatorio
