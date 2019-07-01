@@ -4,7 +4,7 @@
 
 
       <div class="navbar-header">
-        <a href="#" class="navbar-brand">{{title}}</a>
+        <a href="#" class="navbar-brand">UNMSM</a>
       </div>
 
       <ul class="nav navbar-nav" *ngIf="identity">
@@ -18,14 +18,14 @@
         <li> 
           <a [routerLink]="['/timeline']" [routerLinkActive]="['active']">
             <span class="glyphicon glyphicon-th-list"></span>
-            Timeline
+            Publicaciones
           </a>
         </li>
 
         <li> 
           <a [routerLink]="['/gente']" [routerLinkActive]="['active']">
             <span class="glyphicon glyphicon-user"></span>
-            Gente
+            Personas
           </a>
         </li>
 
@@ -73,7 +73,7 @@
               <li>
                 <a [routerLink]="['/mis-datos']">
                   <span class="glyphicon glyphicon-cog"></span>
-                  Mis datos
+                  Editar datos
                 </a>
               </li>
               <li>
