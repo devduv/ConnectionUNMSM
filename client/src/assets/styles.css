@@ -9,7 +9,7 @@
 }
 
 .active{
-	background: #cc1717;
+	background: #353b41;
 }
 
 .pointer{
@@ -24,7 +24,7 @@
 
 .navigation .navbar {
 	border-radius: 0px !important;
-	background: #e53c37 !important;
+	background: #353b41 !important;
 	border: none;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .navigation .navbar a:hover{
-	background: #cc1717 !important;
+	background: #757a7f !important;
 }
 
 .navigation .navbar .dropdown-menu *{
@@ -41,7 +41,7 @@
 }
 
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus{
-	background: #cc1717 !important;
+	background: #757a7f !important;
 }
 
 
@@ -164,7 +164,7 @@
 }
 
 #user-card .stats a:hover .number-stats{
-	color: #cc1717;
+	color: #757a7f;
 }
 
 #user-card .label-stats,
