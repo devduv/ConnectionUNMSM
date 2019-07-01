@@ -1,5 +1,5 @@
 <div class="col-lg-4 sidebar-32">
-<h1 class="h1-strong">Hola, {{identity.name}}</h1>
+<h1 class="h1-strong">{{identity.name}}</h1>
 </div>
 <div id="user-card" class="col-lg-4 panel panel-default pull-left">
 	<div class="avatar pull-left">
@@ -8,10 +8,11 @@
 	</div>
 
 	<div class="name-surname pull-left">
-		<a [routerLink]="['/perfil',identity._id]" class="username">
-			{{identity.name +' '+ identity.surname}}
-		</a>
-		<p class="nickname">{{identity.nick}}</p>
+			@{{identity.nick}}
+		
+		<p class="nickname"><a [routerLink]="['/perfil',identity._id]" class="username">
+			Editar perfil
+		</a></p>
 		<div class="clearfix"></div>
 	</div>
 
