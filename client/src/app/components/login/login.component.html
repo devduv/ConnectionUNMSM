@@ -1,7 +1,7 @@
-<div class="container-login100">
+<div class="container-login100" >
 		<img src="assets/images/bg-03.jpg" alt="IMG" style="width: 35%; height: 40%; color:white;">
 		
-		<form #loginForm="ngForm" (ngSubmit)="onSubmit()" style="width: 40%; margin-left: 20px;">
+		<form #loginForm="ngForm" (ngSubmit)="onSubmit()" style="width: 40%; margin-left: 20px;" >
 			<!-- <h1 class=" animated pulse  h1-strong align-center ">{{title}}</h1> -->
 		<h1 class=" animated pulse infinite h1-strong  " style= 'text-align: center; font-size : 300%; color:rgb(253, 253, 253); '>{{title}}</h1>
 
@@ -30,6 +30,10 @@
 				</span>
 			</p>
 			<input type="submit" value="Iniciar Sesion" class="btn btn-success  btn-lg btn-block" [disabled]="!loginForm.form.valid" />
+			<a  [routerLink]="['/registro']" [routerLinkActive]="['active']">
+              <span style="color: white !important;"></span>
+              Crear una cuenta
+            </a>
 		</form>
 	
 	
