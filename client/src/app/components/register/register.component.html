@@ -1,5 +1,10 @@
-<div class="col-lg-12 align-center">
-	<h1 class="animated pulse infinite h1-strong "   style= 'text-align: center; font-size   : 300%;' >{{title}}</h1>
+<div  class="container-login100" style="background-image: url('assets/images/bg-01.jpg');" >
+
+
+
+<div class="col-lg-12 " >
+	
+	<h1 class="animated pulse infinite h1-strong "  style= 'text-align: center; font-size : 300%; color:rgb(253, 253, 253); ' >{{title}}</h1>
 	
 	<div class="alert alert-success" *ngIf="status == 'success'">
 		Registro completado correctamente, <a [routerLink]="['/login']">identificate aquí</a>
@@ -54,4 +59,5 @@
 		<input type="submit" value="{{title}}" class="btn btn-success  btn-lg btn-block" [disabled]="!registerForm.form.valid" /> 
 	</form>
 
+</div>
 </div>
