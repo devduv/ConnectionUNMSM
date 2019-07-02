@@ -1,5 +1,5 @@
 <div class="container-login100">
-		<img src="assets/images/bg-03.jpg" alt="IMG" style="width: 40%; height: 40%; color:white;">
+		<img src="assets/images/bg-03.jpg" alt="IMG" style="width: 35%; height: 40%; color:white;">
 		
 		<form #loginForm="ngForm" (ngSubmit)="onSubmit()" style="width: 40%; margin-left: 20px;">
 			<!-- <h1 class=" animated pulse  h1-strong align-center ">{{title}}</h1> -->
@@ -15,7 +15,7 @@
 			<div align="center">
 			<img src="assets/images/fisi.png" alt="IMG" style="width: 80px; height: 80px; border-radius:50%; position:relative;"></div>
 			<p>
-				<label style="color: white;">Correo electrónico</label>
+				<label style="color: white; font-size: 17px;">Correo electrónico</label>
 				<input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
 				<span *ngIf="!email.valid && email.touched" style="color: red;">
 					El email no es correcto
@@ -23,13 +23,12 @@
 			</p>
 			
 			<p>
-				<label style="color: white;">Contraseña</label>
+				<label style="color: white; font-size: 17px;">Contraseña</label>
 				<input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control" required />
 				<span *ngIf="!password.valid && password.touched" style="color: red;">
 					 La contraseña es obligatoria
 				</span>
 			</p>
-	
 			<input type="submit" value="Iniciar Sesion" class="btn btn-success  btn-lg btn-block" [disabled]="!loginForm.form.valid" />
 		</form>
 	
