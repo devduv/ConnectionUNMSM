@@ -166,6 +166,23 @@ iframe {
   z-index: 1;  
 }
 
+.duvan{
+  width: 100%;  
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;  
+}
+
 .container-login100::before {
   content: "";
   display: block;
