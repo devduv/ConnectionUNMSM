@@ -26,6 +26,12 @@ margin-right: auto;
 	
 	}
 
+/*Estilos de Duvan xd */
+
+.natalydiv{
+	filter:alpha(opacity=50); 
+	opacity:0.5;
+}
 
 
 /*Generales*/
