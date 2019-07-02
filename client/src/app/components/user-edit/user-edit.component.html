@@ -1,5 +1,5 @@
-<div class="col-lg-5">
-	<h1 class="h1-strong">{{title}}</h1>
+<div class="col-lg-12 align-center">
+	<h1 class="animated pulse infinite h1-strong  "  style= 'text-align: center; font-size   : 300%;'>{{title}}</h1>
 
 	<div class="alert alert-success" *ngIf="status == 'success'">
 		Se han actualizado tus datos correctamente!!
@@ -9,7 +9,7 @@
 		No se han podido actualizar tus datos!!
 	</div>
 
-	<form #userEditForm="ngForm" (ngSubmit)="onSubmit()" class="col-lg-12">
+	<form #userEditForm="ngForm" (ngSubmit)="onSubmit()" class="form-container align-center">
 		<p>
 			<label>Nombre</label>
 			<input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" required class="form-control"/>
@@ -47,11 +47,12 @@
 		</div>
 
 		<p>
-			<label>Sube tu avatar</label>
-			<input type="file" placeholder="Subir imagen" (change)="fileChangeEvent($event)"/>
+			<label   class="btn btn-default btn-sm btn-file"> <i class="fa fa-upload "></i>  Sube tu avatar
+			<input type="file"  id="fileUpload"  style="display: none; " placeholder="Subir imagen" (change)="fileChangeEvent($event)"  />
+		    </label>
 		</p>
 
-		<input type="submit" value="{{title}}" class="btn btn-warning" [disabled]="!userEditForm.form.valid" />
+		<input type="submit"  value="{{title}}" class="btn btn-warning btn-lg btn-block" [disabled]="!userEditForm.form.valid" />
 	</form>
 
 </div>
