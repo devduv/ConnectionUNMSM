@@ -45,7 +45,7 @@ margin-right: auto;
 }
 
 .active{
-	background: #353b41;
+	background: #0d0e0f;
 }
 
 .pointer{
@@ -60,7 +60,7 @@ margin-right: auto;
 
 .navigation .navbar {
 	border-radius: 0px !important;
-	background: #353b41 !important;
+	background: #0d0e0f !important;
 	border: none;
 }
 
