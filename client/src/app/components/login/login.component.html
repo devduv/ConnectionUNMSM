@@ -1,39 +1,45 @@
-<div class="brandon" >
+<div class="brandon" style="height: 90% !important;">
 		
 		
 		<form #loginForm="ngForm" (ngSubmit)="onSubmit()" style="width: 40%; margin-left: 20px;" >
 			<!-- <h1 class=" animated pulse  h1-strong align-center ">{{title}}</h1> -->
-		<h1 class=" animated pulse infinite h1-strong  " style= 'text-align: center; font-size : 300%; color:rgb(253, 253, 253); '>{{title}}</h1>
+		<div align="center"><label class=" animated pulse infinite" style= 'text-align: center; font-size : 300%; color:rgb(253, 253, 253); '>¡ {{title}} !</label>
+		</div>
+		<hr/>
 
 		<div class="alert alert-success" *ngIf="status == 'success'">
 			Te has identificado correctamente, bienvenido!!
 		</div>
 	
 		<div class="alert alert-danger" *ngIf="status == 'error'">
-			No te has podido identificar correctamente!!
+			Debe ingresar un correo electrónico válido
 		</div>
+
 			<div align="center">
 			<img src="assets/images/fisi.png" alt="IMG" style="width: 80px; height: 80px; border-radius:50%; position:relative;"></div>
+			<br>
+			<br>
+
 			<p>
-				<label style="color: white; font-size: 17px;">Correo electrónico</label>
+				<label style="color: white; font-size: 17px;"><img src="assets/images/user.png" alt="IMG" style="width: 25px; height: 25px; color: white;"> Correo electrónico</label>
 				<input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
-				<span *ngIf="!email.valid && email.touched" style="color: red;">
-					El email no es correcto
-				</span>
+				
 			</p>
 			
 			<p>
-				<label style="color: white; font-size: 17px;">Contraseña</label>
+				<label style="color: white; font-size: 17px;"><img src="assets/images/key.png" alt="IMG" style="width: 25px; height: 25px; color: white;"> Contraseña</label>
 				<input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control" required />
-				<span *ngIf="!password.valid && password.touched" style="color: red;">
-					 La contraseña es obligatoria
-				</span>
+
 			</p>
-			<input type="submit" value="Iniciar Sesion" class="btn btn-success  btn-lg btn-block" [disabled]="!loginForm.form.valid" />
-			<a  [routerLink]="['/registro']" [routerLinkActive]="['active']">
-              <span style="color: white !important;"></span>
+			<br>
+			<input type="submit" value="Iniciar Sesion" class="btn btn-success btn-lg btn-block" style="background-color: #429cae;" />
+			<br>	
+			<div align="center">
+				<a  [routerLink]="['/registro']" [routerLinkActive]="['active']" style="color: white !important; font-size: 20px !important;">
+              <span ></span>
               Crear una cuenta
             </a>
+			</div>
 		</form>
 	
 	

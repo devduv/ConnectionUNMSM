@@ -171,9 +171,8 @@ background-attachment: fixed;
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  padding: 15px;
   position: relative;
  
 }
@@ -195,15 +194,10 @@ background-attachment: fixed;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
   padding: 15px;
-  margin-bottom: 100px;
    background-attachment: fixed;
-  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  position: relative;
-  z-index: 1;  
 }
 
 .duvan2{
