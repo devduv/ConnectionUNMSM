@@ -4,7 +4,7 @@
 	
 <div class="col-lg-12 " >
 		<!-- <h1 class=" animated pulse  h1-strong align-center ">{{title}}</h1> -->
-		<h1 class=" animated pulse infinite h1-strong align-center " style= 'text-align: center;'>{{title}}</h1>
+		<h1 class=" animated pulse infinite h1-strong  " style= 'text-align: center; font-size   : 300%;'>{{title}}</h1>
 
 		<div class="alert alert-success" *ngIf="status == 'success'">
 			Te has identificado correctamente, bienvenido!!
@@ -15,7 +15,8 @@
 		</div>
 	
 	
-	
+	<br>
+	<br>
 		<form #loginForm="ngForm" (ngSubmit)="onSubmit()" class=" form-container align-center ">
 			<p>
 				<label>Correo electrónico</label>
@@ -33,7 +34,7 @@
 				</span>
 			</p>
 	
-			<input type="submit" value="Entrar" class="btn btn-success" [disabled]="!loginForm.form.valid" />
+			<input type="submit" value="Entrar" class="btn btn-success  btn-lg btn-block" [disabled]="!loginForm.form.valid" />
 		</form>
 	
 		
