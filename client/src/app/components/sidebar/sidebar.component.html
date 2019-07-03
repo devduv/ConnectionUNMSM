@@ -1,6 +1,4 @@
-<div class="col-lg-4 sidebar-32">
-<h1 class="h1-strong">{{identity.name}}</h1>
-</div>
+
 <div id="user-card" class="col-lg-4 panel panel-default pull-left">
 	<div class="avatar pull-left">
 		<img src="{{ url + 'get-image-user/' + identity.image }}" *ngIf="identity.image"/>
@@ -18,10 +16,11 @@
 
 	<div class="clearfix"></div>
 
-	<div class="stats" *ngIf="stats">
-		<div class="following-data">
-			<a [routerLink]="['/siguiendo',identity._id,1]">
-				<span class="label-stats">
+	<div class="stats" *ngIf="stats" align="center">
+		<div>
+			<div class="following-data">
+			<a [routerLink]="['/siguiendo',identity._id,1]" style="color: black;">
+				<span class="name-surname pull-left" style="font-size: 13px;">
 					Siguiendo
 				</span>
 				<span class="number-stats">
@@ -31,8 +30,8 @@
 		</div>
 
 		<div class="following-data">
-			<a [routerLink]="['/seguidores',identity._id,1]">
-				<span class="label-stats">
+			<a [routerLink]="['/seguidores',identity._id,1]" style="color: black;">
+				<span class="name-surname pull-left" style="font-size: 13px;">
 					Seguidores
 				</span>
 				<span class="number-stats">
@@ -42,14 +41,15 @@
 		</div>
 
 		<div class="following-data">
-			<a [routerLink]="['/perfil',identity._id]">
-				<span class="label-stats">
+			<a [routerLink]="['/perfil',identity._id]" style="color: black;">
+				<span class="name-surname pull-left" style="font-size: 13px;">
 					Publicaciones
 				</span>
 				<span class="number-stats">
 					{{stats.publications}}
 				</span>
 			</a>
+		</div>
 		</div>
 	</div>
 </div>

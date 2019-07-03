@@ -1,9 +1,10 @@
 <div class="brandon" style="height: 90% !important;">
 		
-		
-		<form #loginForm="ngForm" (ngSubmit)="onSubmit()" style="width: 40%; margin-left: 20px;" >
+			<form #loginForm="ngForm" (ngSubmit)="onSubmit()">
 			<!-- <h1 class=" animated pulse  h1-strong align-center ">{{title}}</h1> -->
-		<div align="center"><label class=" animated pulse infinite" style= 'text-align: center; font-size : 300%; color:rgb(253, 253, 253); '>¡ {{title}} !</label>
+		
+				<div>
+					<div align="center"><label class=" animated pulse infinite" style= 'text-align: center; font-size : 280%; color:rgb(253, 253, 253); '>{{title}}, ingresa.</label>
 		</div>
 		<hr/>
 
@@ -16,31 +17,31 @@
 		</div>
 
 			<div align="center">
-			<img src="assets/images/fisi.png" alt="IMG" style="width: 80px; height: 80px; border-radius:50%; position:relative;"></div>
-			<br>
-			<br>
-
-			<p>
-				<label style="color: white; font-size: 17px;"><img src="assets/images/user.png" alt="IMG" style="width: 25px; height: 25px; color: white;"> Correo electrónico</label>
-				<input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="example@unmsm.edu.pe" />
-				
-			</p>
-			
-			<p>
-				<label style="color: white; font-size: 17px;"><img src="assets/images/key.png" alt="IMG" style="width: 25px; height: 25px; color: white;"> Contraseña</label>
-				<input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control" required placeholder="····················" />
-
-			</p>
-			<br>
-			<input type="submit" value="Iniciar Sesion" class="btn btn-success btn-lg btn-block" style="background-color: #429cae;" />
-			<br>	
-			<div align="center">
-				<a  [routerLink]="['/registro']" [routerLinkActive]="['active']" style="color: white !important; font-size: 20px !important;">
-              <span ></span>
-              Crear una cuenta
-            </a>
+				<img src="assets/images/fisi.png" alt="IMG" style="width: 80px; height: 80px; border-radius:50%; position:relative;">
 			</div>
+				<br>
+				<br>
+
+					<p>
+					<label style="color: white; font-size: 17px;"><img src="assets/images/user.png" alt="IMG" style="width: 25px; height: 25px; color: white;"> Correo electrónico</label>
+					<input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="example@unmsm.edu.pe" />
+					
+					</p>
+					
+					<p>
+						<label style="color: white; font-size: 17px;"><img src="assets/images/key.png" alt="IMG" style="width: 25px; height: 25px; color: white;"> Contraseña</label>
+						<input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control" required placeholder="····················" />
+
+					</p>
+					<br>
+					<input type="submit" value="Iniciar Sesion" class="btn btn-success btn-lg btn-block" style="background-color: #429cae;" />
+					<br>	
+					<div align="center">
+						<a class="btn btn-default btn-danger"  [routerLink]="['/registro']" [routerLinkActive]="['active']" style="color: white !important; font-size: 20px !important;">
+		              	<span ></span>
+		              	Crear una cuenta
+		            	</a>
+					</div>
+				</div>
 		</form>
-	
-	
 	</div>

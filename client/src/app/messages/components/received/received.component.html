@@ -1,8 +1,9 @@
-<div class="col-lg-10" align="center" style="width: 100%;">
+<div class="col-lg-10"  style="width: 100%;">
 	<br>
-	<span class="login100-form-title" style="font-size:25px !important;">{{title}}
-	<hr/>
-</span>
+	<label  style="color: white; font-size:25px !important;"><img src="assets/images/email.png" alt="IMG" style="width: 28px; height: 28px; color: white;"> {{title}}
+	
+</label>
+<hr/>
 
 	<!--listado de mensajes recibidos-->
 	<div class="people" *ngIf="messages">
@@ -10,31 +11,31 @@
 		<!--LISTADO-->
 		<div *ngFor="let message of messages" class="item-user">
 			<div class="panel panel-default" *ngIf="message.emitter">
-				<div class="panel-body">
+				<div class="panel-body" style="width: 100%;">
+
+					<button class="btn btn-danger" style="position: absolute; left: 89%;"><img src="assets/images/delete.png" alt="IMG" style="width: 15px; height: 15px; color: white;"></button>
 					<div class="image-user pull-left">
 						<a href="#">
-							<img src="{{ url +'get-image-user/' + message.emitter.image }}" *ngIf="message.emitter.image"/>
+							<img src="{{ url +'get-image-user/' + message.emitter.image }}" *ngIf="message.emitter.image" style="width: 100%; height: auto;"/>
 							<img src="assets/user.png" class="avatar-default" *ngIf="!message.emitter.image"/>
 						</a>	
 					</div>
-
-					<div class="user-name pull-left">
-						<p class="name-surname">
+						<div>
+							<span class="nickname">@{{message.emitter.nick}} </span>
 							<a [routerLink]="['/perfil',message.emitter._id]">
 								{{message.emitter.name + ' ' + message.emitter.surname}}
 							</a>
-							&nbsp;|&nbsp;
-							<span class="nickname">{{message.emitter.nick}}</span>
-							&nbsp;|&nbsp;
-							<span class="date nickname">
+
+						</div>
+
+						<span class="date nickname" style="font-size: 11px;">
 								{{ (message.created_at | amFromUnix) | amLocale:'es' | amTimeAgo }}
 							</span>
-							
-						</p>
-						<p>
+							<br/>
+						<span style="font-size: 15px;">
 							{{message.text}}
-						</p>
-					</div>
+						</span>
+
 
 				</div>
 			
@@ -47,4 +48,6 @@
 			<li *ngIf="page > 1"><a [routerLink]="['/mensajes/recibidos', prev_page]">Anterior</a></li>
 			<li *ngIf="pages != page"><a [routerLink]="['/mensajes/recibidos', next_page]">Siguiente</a></li>
 		</ul>
+
+
 </div>

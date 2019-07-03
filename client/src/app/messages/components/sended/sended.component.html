@@ -1,5 +1,9 @@
-<div class="col-lg-10">
-	<h3>{{title}}</h3>
+<div class="col-lg-10"  style="width: 100%;">
+	<br>
+	<label  style="color: white; font-size:25px !important;"><img src="assets/images/send.png" alt="IMG" style="width: 28px; height: 28px; color: white;"> {{title}}
+	
+</label>
+<hr/>
 
 	<!--listado de mensajes enviados-->
 	<div class="people" *ngIf="messages">
@@ -7,7 +11,7 @@
 		<!--LISTADO-->
 		<div *ngFor="let message of messages" class="item-user">
 			<div class="panel panel-default" *ngIf="message.emitter">
-				<div class="panel-body">
+				<div class="panel-body" style="width: 100%;">
 					<div class="image-user pull-left">
 						<a href="#">
 							<img src="{{ url +'get-image-user/' + message.emitter.image }}" *ngIf="message.emitter.image"/>
@@ -47,4 +51,5 @@
 			<li *ngIf="page > 1"><a [routerLink]="['/mensajes/enviados', prev_page]">Anterior</a></li>
 			<li *ngIf="pages != page"><a [routerLink]="['/mensajes/enviados', next_page]">Siguiente</a></li>
 		</ul>
+</div>
 </div>

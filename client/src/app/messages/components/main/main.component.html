@@ -2,22 +2,20 @@
 	<div class="sidebar-admin" >
 		<ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
 			<li role="presentation" [routerLinkActive]="['active']">
-				<a [routerLink]="['enviar']">Enviar mensaje</a>
+				<a [routerLink]="['enviar']"><img src="assets/images/write.png" alt="IMG" style="width: 20px; height: 20px; color: white;">  Enviar mensaje</a>
 			</li>
 			<li role="presentation" [routerLinkActive]="['active']">
-				<a [routerLink]="['recibidos']">Mensajes recibidos</a>
+				<a [routerLink]="['recibidos']"> <img src="assets/images/email.png" alt="IMG" style="width: 20px; height: 20px; color: white;">  Mensajes recibidos</a>
 			</li>
 			<li role="presentation" [routerLinkActive]="['active']">
-				<a [routerLink]="['enviados']">Mensajes enviados</a>
+				<a [routerLink]="['enviados']"><img src="assets/images/send.png" alt="IMG" style="width: 20px; height: 20px; color: white;">  Mensajes enviados</a>
 			</li>
-			<li role="presentation">
-				<a [routerLink]="['/home']">Información</a>
-			</li>
+			
 		</ul>
 	</div>
 </div>
 
-<div class="col-lg-7 grace" style="width: 65%;">
+<div class="col-lg-7 grace" style="width: 65%; height: 100%;">
 	
 	<router-outlet></router-outlet>
 </div>

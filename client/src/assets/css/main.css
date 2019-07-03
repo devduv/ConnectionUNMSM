@@ -1,4 +1,14 @@
+@media handheld, only screen and (max-width: 767px) {
+.search_and_share{
+display:none;
+}
+}
 
+@media only screen and (max-width: 1023px) {
+.search_and_share{
+display:none;
+}
+}
 
 
 
@@ -167,7 +177,7 @@ background-attachment: fixed;
 
 .brandon {
   width: 100%;  
- display: -moz-box;
+  display: -moz-box;
   display: -ms-flexbox;
   display: flex;
   flex-wrap: : wrap;
