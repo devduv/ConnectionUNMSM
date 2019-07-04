@@ -1,5 +1,6 @@
-<div class="col-lg-10"  style="width: 100%;">
-	<br>
+<div class="col-lg-14"  style="width: 100%;">
+	<div class="col-lg-7">
+		<br>
 	<label  style="color: white; font-size:25px !important;"><img src="assets/images/email.png" alt="IMG" style="width: 28px; height: 28px; color: white;"> {{title}}
 	
 </label>
@@ -11,9 +12,9 @@
 		<!--LISTADO-->
 		<div *ngFor="let message of messages" class="item-user">
 			<div class="panel panel-default" *ngIf="message.emitter">
-				<div class="panel-body" style="width: 100%;">
+				<div class="panel-body">
 
-					<button class="btn btn-danger" style="position: absolute; left: 89%;"><img src="assets/images/delete.png" alt="IMG" style="width: 15px; height: 15px; color: white;"></button>
+					
 					<div class="image-user pull-left">
 						<a href="#">
 							<img src="{{ url +'get-image-user/' + message.emitter.image }}" *ngIf="message.emitter.image" style="width: 100%; height: auto;"/>
@@ -50,4 +51,26 @@
 		</ul>
 
 
+	</div>
+</div>
+<div class="col-sm-5 search_and_share" style="margin-top: 15%;">
+		<div id="user-card" class="panel panel-default pull-left" style="width: 100% ;">
+			<span style="color: black;"><p>Mensajes enviados por:</p>{{identity.name + ' ' + identity.surname}}</span>
+			<div class="avatar pull-left">
+				<img src="{{ url + 'get-image-user/' + identity.image }}" *ngIf="identity.image"/>
+				<img src="assets/user.png" *ngIf="!identity.image"/>
+			</div>
+
+			<div class="name-surname pull-left">
+					<span style="font-size: 12px;">@{{identity.nick}}</span>
+				
+				<p class="nickname"><a [routerLink]="['/perfil',identity._id]" class="username" style="font-size: 13px; color:#429cae;">
+					Ir a mi perfil
+				</a></p>
+				<div class="clearfix"></div>
+			</div>
+
+			<div class="clearfix"></div>
+		</div>
+	</div>
 </div>

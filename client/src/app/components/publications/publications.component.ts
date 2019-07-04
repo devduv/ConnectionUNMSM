@@ -21,6 +21,7 @@ export class PublicationsComponent implements OnInit{
 	public pages;
 	public itemsPerPage;
 	public publications: Publication[];
+	public showImage;
 	@Input() user: string;
 
 	constructor(
@@ -85,6 +86,32 @@ export class PublicationsComponent implements OnInit{
 		}
 
 		this.getPublications(this.user, this.page, true);
+	}
+refresh(event = null){
+		this.getPublications(1);
+	}
+
+	showThisImage(id){
+		this.showImage = id;
+	}
+
+	hideThisImage(id){
+		this.showImage = 0;
+	}
+
+	deletePublication(id){
+		this._publicationService.deletePublication(this.token, id).subscribe(
+			response => {
+				this.refresh();
+			},
+			error => {
+				console.log(<any>error);
+			}
+		);
+	}
+
+		refresh(event = null){
+		this.getPublications(1);
 	}
 
 }

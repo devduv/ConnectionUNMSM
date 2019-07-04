@@ -1,9 +1,9 @@
-<div class="col-lg-8 grace">
-	<h1 class="h1-strong">
-		{{title}}
-		<button class="btn btn-success btn-sm" (click)="refresh($event)">Mostrar nuevas</button>
-	</h1>
-
+<div class="col-sm-8 brandon" style="margin-right: 12px;">
+	<div class="col-lg-12 publications">
+<label  style="color: white; font-size:25px !important; margin-top: 15px;  margin-bottom: 15px;"><img src="assets/images/email.png" alt="IMG" style="width: 28px; height: 28px; color: white;"> Linea de tiempo de Publicaciones
+	<button style="height: 100%;" class="btn btn-success btn-sm" (click)="refresh($event)">Actualizar publicaciones</button>
+</label>
+	
 	<div id="publications">
 		<div *ngFor="let publication of publications" class="item-publication">
 			<div class="panel panel-default">
@@ -11,7 +11,7 @@
 
 					<div class="image-user pull-left">
 						<a href="#">
-							<img src="{{ url +'get-image-user/' + publication.user.image }}" *ngIf="publication.user.image"/>
+							<img src="{{ url +'get-image-user/' + publication.user.image }}" *ngIf="publication.user.image" style="width: 100%; height: auto;"/>
 							<img src="assets/user.png" class="avatar-default" *ngIf="!publication.user.image"/>
 						</a>	
 					</div>
@@ -20,15 +20,16 @@
 						<a [routerLink]="['/perfil',publication.user._id]" class="user-name">
 							{{publication.user.name + ' ' + publication.user.surname }}
 						</a>
-						&nbsp;|&nbsp;
-						<span class="date">
+						<br>
+						<span class="date" style="font-size: 12px;">
 							{{ (publication.created_at | amFromUnix) | amLocale:'es' | amTimeAgo }}
 						</span>
+						<hr/>
 					</div>
 				
-					<h4 class="publication-text pull-left">
+					<p class="publication-text pull-left">
 						{{publication.text}}
-					</h4>
+					</p>
 
 					<div class="pull-right" *ngIf="publication.user._id == identity._id">
 						
@@ -79,17 +80,18 @@
 						<img src="{{ url + 'get-image-pub/' + publication.file}}" class="col-lg-12"/>
 					</div>
 				</div>
+
 			</div>
+			<hr/>
 		</div>
 	</div>
 
-	<div class="col-lg-12 text-center" *ngIf="publications && publications.length">
-		<p>
-			<button class="btn btn-success" (click)="viewMore()" *ngIf="!noMore">
-				Ver más publicaciones
+	<div class="col-lg-12" align="right" *ngIf="publications && publications.length">
+			<button class="btn btn-success" style="background-color: #429cae; margin-bottom: 15px;" (click)="viewMore()" *ngIf="!noMore">
+				Cargar más publicaciones
 			</button>
-		</p>
 	</div>
+</div>
 </div>
 
 <sidebar (sended)="refresh($event)"></sidebar>

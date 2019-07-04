@@ -31,12 +31,10 @@
 				<span class="date nickname" style="font-size: 15px; color: white;">
 					Escribir un mensaje:
 				</span>
-				<p>
 				<textarea name="text" #text="ngModel" [(ngModel)]="message.text" class="form-control" required style="resize: none;" maxlength="255" placeholder="Hola, ¿Cómo estás? :D..." rows="5" cols="50"></textarea>
 				<span *ngIf="!text.valid && text.touched">
 					El mensaje es obligatorio
 				</span>
-			</p>
 
 			<input type="submit" value="{{title}}" class="btn btn-success" style="background-color: #429cae;"/>
 		</form>

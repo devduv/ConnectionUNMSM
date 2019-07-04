@@ -1,23 +1,22 @@
-<div class="col-lg-8">
-	<h1 class="h1-strong">
-		{{title}}
-	</h1>
-
-	<div id="data-profile" *ngIf="user">
-		<div class="avatar pull-left">
-			<img src="{{ url + 'get-image-user/' + user.image }}" *ngIf="user.image"/>
-			<img src="assets/user.png" *ngIf="!user.image" />
+<div class="col-sm-8 brandon" style="margin-right: 12px;">
+		<div id="data-profile" *ngIf="user">
+		<div class="publications col-lg-12">
+			<label  style="color: white; font-size:25px !important;"><img src="assets/images/user.png" alt="IMG" style="width: 28px; height: 28px; color: white;"> Perfil del Usuario</label>
+			<hr/>
+<div class="pull-left" align="center">
+			<img style="width: 200px; height: 200px; padding: 5px; margin-right: 10px;" src="{{ url + 'get-image-user/' + user.image }}" *ngIf="user.image"/>
+			<img src="assets/user.png" *ngIf="!user.image" style="width: 200px; height: 200px; padding: 5px; margin-right: 10px;"/>
 		</div>
 
-		<div class="user-name pull-left">
+		<div class="pull-left" style="margin-right: 10px;">
 			<div class="label label-default pull-left" *ngIf="followed">
-				Te sigue
+				Te está siguiendo
 			</div>
 
 			<div class="clearfix"></div>
 			<div class="pull-left">
-				<p class="name">{{user.name +' '+ user.surname}}</p>
-				<p class="nick">{{user.nick}}</p>
+				<p class="name" style="color: white;">{{user.name +' '+ user.surname}}</p>
+				<p class="nick" style="color:  #429cae;">{{user.nick}}</p>
 			</div>
 			<div class="clearfix"></div>
 			
@@ -37,54 +36,55 @@
 						Dejar de seguir
 					</span>
 					<ng-template #following>
-						Siguiendo
+						 Siguiendo
 					</ng-template>
 				</button>
 			</div>
 
 		</div>
 
-		<div class="stats pull-left" *ngIf="stats">
-			<div class="following-data">
-				<a [routerLink]="['/siguiendo', user._id, 1]">
-					<span class="label-stats">
-						Siguiendo
-					</span>
-					<span class="number-stats">
-						{{stats.following}}
-					</span>
+		
+		<div class="pull-left" *ngIf="stats" style="margin-left: 15px;">
+			<div class="label label-default pull-left" style="background-color: #abcf00;">
+				Estado del perfil
+			</div>
+			<br/>
+			<div style="margin-bottom: 7px;">
+				<a [routerLink]="['/siguiendo', user._id, 1]" style="color: white; font-size: 15px;">
+					<p class="name" style="color: #429cae;"><i class="fa fa-user"  style="font-size: 16px;" ></i>
+						{{stats.following}} persona(s) que sigue.
+					</p>
 				</a>
 			</div>
 
-			<div class="following-data">
-				<a [routerLink]="['/seguidores',user._id,1]">
-					<span class="label-stats">
-						Seguidores
-					</span>
-					<span class="number-stats">
-						{{stats.followed}}
-					</span>
+			<div style="margin-bottom: 7px;">
+				<a [routerLink]="['/seguidores',user._id,1]"  style="color: white; font-size: 15px;">
+					<p class="name" style="color: #429cae;">
+						<i class="fa fa-user"  style="font-size: 16px;" ></i> {{stats.followed}} persona(s) siguen esta cuenta.
+					</p>
 				</a>
 			</div>
 
-			<div class="following-data">
-				<a href="#">
-					<span class="label-stats">
-						Publicaciones 
-					</span>
-					<span class="number-stats">
-						{{stats.publications}}
-					</span>
+			<div>
+				<a href="#" >
+					<p class="name" style="color: #429cae;">
+						<i class="fa fa-user"  style="font-size: 16px;" ></i>
+						 {{stats.publications}} Publicacion(es) realizada(s).
+					</p>
 				</a>
 			</div>
 		</div>
+		</div>
+
 
 		<div class="col-lg-12 publications" *ngIf="user">
+			
+			<label  style="color: white; font-size:25px !important;"><img src="assets/images/email.png" alt="IMG" style="width: 28px; height: 28px; color: white;"> Historial de publicaciones</label>
+			<hr/>
 			<publications [user]="user._id"></publications>
 		</div>
 		
 	</div>
-
+		
 </div>
-
 <sidebar></sidebar>

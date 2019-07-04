@@ -1,32 +1,38 @@
-<div class="col-lg-8">
-	<h1 class="h1-strong">{{title}}</h1>
-
+<div class="col-sm-8 brandon" style="margin-right: 12px;">
+	<div class="col-sm-12">
+		<br/>
+		<label  style="color: white; font-size:25px !important;"><img src="assets/images/name.png" alt="IMG" style="width: 28px; height: 28px; color: white;"> Alumnos, docentes, entre otros...
+	
+</label>
+<hr/>
 	<div class="people">
 
 		<!--LISTADO-->
 		<div *ngFor="let user of users" class="item-user">
-			<div class="panel panel-default">
+			<div class="panel panel-default col-sm-6" style="width: 48%; margin:3px;">
 				<div class="panel-body">
+
 					<div class="image-user pull-left">
+
 						<a href="#">
-							<img src="{{ url +'get-image-user/' + user.image }}" *ngIf="user.image"/>
+							<img src="{{ url +'get-image-user/' + user.image }}" *ngIf="user.image" style="width: 100%; height: auto;" />
 							<img src="assets/user.png" class="avatar-default" *ngIf="!user.image"/>
+
 						</a>	
 					</div>
 
-					<div class="user-name pull-left">
-						<p class="name-surname">
-							<a [routerLink]="['/perfil',user._id]">
-								{{user.name + ' ' + user.surname}}
-							</a>
-						</p>
-						<p class="nickname">{{user.nick}}</p>
-					</div>
 
-					<!-- SEGUIR/DEJAR DE SEGUIR -->
-					<div class="pull-right" *ngIf="user._id != identity._id">
+					<div>
+							<a [routerLink]="['/perfil',user._id]">
+								{{user.name}}
+								<p>
+								{{user.surname}}</p>
+
+							</a>
+							<a [routerLink]="['/perfil',user._id]"><span>@{{user.nick}}</span></a>
+						<span class="nickname"><div class="pull-right" *ngIf="user._id != identity._id">
 						<button class="btn btn-success" *ngIf="follows.indexOf(user._id) < 0"
-						(click)="followUser(user._id)">
+						(click)="followUser(user._id)" style="font-size: 10px;">
 							<span class="glyphicon glyphicon-plus-sign"></span>
 							Seguir
 						</button>
@@ -37,7 +43,7 @@
 						(mouseleave)="mouseLeave(user._id)"
 						(click)="unfollowUser(user._id)"
 						[class.btn-danger]="user._id == followUserOver"
-						>
+						style="font-size: 10px;">
 							<span *ngIf="user._id == followUserOver; else following">
 								<span class="glyphicon glyphicon-minus-sign"></span>
 								Dejar de seguir
@@ -48,6 +54,8 @@
 							</ng-template>
 
 						</button>
+					</div></span>
+
 					</div>
 				</div>
 			</div>
@@ -58,6 +66,7 @@
 			<li *ngIf="page > 1"><a [routerLink]="['/gente', prev_page]">Anterior</a></li>
 			<li *ngIf="pages != page"><a [routerLink]="['/gente', next_page]">Siguiente</a></li>
 		</ul>
+	</div>
 	</div>
 </div>
 
