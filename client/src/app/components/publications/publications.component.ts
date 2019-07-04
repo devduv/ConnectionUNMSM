@@ -110,8 +110,6 @@ refresh(event = null){
 		);
 	}
 
-		refresh(event = null){
-		this.getPublications(1);
-	}
+
 
 }

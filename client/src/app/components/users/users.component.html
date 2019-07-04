@@ -30,7 +30,8 @@
 
 							</a>
 							<a [routerLink]="['/perfil',user._id]"><span>@{{user.nick}}</span></a>
-						<span class="nickname"><div class="pull-right" *ngIf="user._id != identity._id">
+						<span class="nickname">
+							<div class="pull-right" *ngIf="user._id != identity._id">
 						<button class="btn btn-success" *ngIf="follows.indexOf(user._id) < 0"
 						(click)="followUser(user._id)" style="font-size: 10px;">
 							<span class="glyphicon glyphicon-plus-sign"></span>
