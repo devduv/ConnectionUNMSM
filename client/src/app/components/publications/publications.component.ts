@@ -35,6 +35,7 @@ export class PublicationsComponent implements OnInit{
 		this.token = this._userService.getToken();
 		this.url = GLOBAL.url;
 		this.page = 1;
+		//this.showImage = publication._id;
 	}
 
 	ngOnInit(){
@@ -87,12 +88,18 @@ export class PublicationsComponent implements OnInit{
 
 		this.getPublications(this.user, this.page, true);
 	}
-refresh(event = null){
-		this.getPublications(1);
-	}
 
-	showThisImage(id){
+showThisImage(id){
 		this.showImage = id;
+	}
+	hideThisImage(id){
+		this.showImage = 0;
+	}
+	/*showThisImage(id){
+		this.showImage = id;
+	}
+	refresh(event = null){
+		this.getPublications(1);
 	}
 
 	hideThisImage(id){
@@ -108,7 +115,18 @@ refresh(event = null){
 				console.log(<any>error);
 			}
 		);
+	}*/
+	deletePublication(id){
+		this._publicationService.deletePublication(this.token, id).subscribe(
+			response => {
+				//this.refresh();
+			},
+			error => {
+				console.log(<any>error);
+			}
+		);
 	}
+
 
 
 
