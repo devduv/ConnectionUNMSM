@@ -30,7 +30,7 @@
 					<p class="publication-text pull-left">
 						{{publication.text}}
 					</p>
-
+					
 					<div class="pull-right" *ngIf="publication.user._id == identity._id">
 						
 						&nbsp;
@@ -68,16 +68,16 @@
 					</div>
 
 					<div class="pull-right" *ngIf="publication.file != 'null' ">
-						<button class="btn btn-warning pull-right" (click)="showThisImage(publication._id)" *ngIf="showImage != publication._id">
-							<span class="glyphicon glyphicon-picture"></span>
+						<button class="btn btn-primary pull-right" (click)="showThisImage(publication._id)" *ngIf="showImage != publication._id">
+							<i class="glyphicon glyphicon-picture"> </i><span> Mostrar imagen</span>
 						</button>
 						<button class="btn btn-danger pull-right" (click)="hideThisImage(publication._id)" *ngIf="showImage == publication._id">
-							<span class="glyphicon glyphicon-remove-circle"></span>
+							<i class="glyphicon glyphicon-remove-circle"></i><span> Ocultar</span>
 						</button>
 					</div>
 					<div class="col-lg-12" *ngIf="publication.file != 'null' && showImage == publication._id">
 						<br/>
-						<img src="{{ url + 'get-image-pub/' + publication.file}}" class="col-lg-12"/>
+						<img src="{{ url + 'get-image-pub/' + publication.file}}" class="col-lg-12" style="width: 70%; height: auto;"/>
 					</div>
 				</div>
 

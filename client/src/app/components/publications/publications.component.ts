@@ -32,10 +32,10 @@ export class PublicationsComponent implements OnInit{
 	){
 		this.title = 'Publicacionies';
 		this.identity = this._userService.getIdentity();
+		//this.stats = this._userService.getStats();
 		this.token = this._userService.getToken();
 		this.url = GLOBAL.url;
 		this.page = 1;
-		//this.showImage = publication._id;
 	}
 
 	ngOnInit(){
@@ -95,27 +95,7 @@ showThisImage(id){
 	hideThisImage(id){
 		this.showImage = 0;
 	}
-	/*showThisImage(id){
-		this.showImage = id;
-	}
-	refresh(event = null){
-		this.getPublications(1);
-	}
-
-	hideThisImage(id){
-		this.showImage = 0;
-	}
-
-	deletePublication(id){
-		this._publicationService.deletePublication(this.token, id).subscribe(
-			response => {
-				this.refresh();
-			},
-			error => {
-				console.log(<any>error);
-			}
-		);
-	}*/
+	
 	deletePublication(id){
 		this._publicationService.deletePublication(this.token, id).subscribe(
 			response => {
@@ -127,7 +107,5 @@ showThisImage(id){
 		);
 	}
 
-
-
-
+	
 }

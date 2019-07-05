@@ -1,4 +1,6 @@
-<div class="col-lg-10" style="width: 100% !important;">
+<div class="col-sm-12" style="width: 100% !important;">
+	<div class="col-sm-7">
+
 	<br>
 	<label  style="color: white; font-size:25px !important;"><img src="assets/images/write.png" alt="IMG" style="width: 28px; height: 28px; color: white;"> {{title}}
 	
@@ -36,7 +38,29 @@
 					El mensaje es obligatorio
 				</span>
 
-			<input type="submit" value="{{title}}" class="btn btn-success" style="background-color: #429cae;"/>
+			<input type="submit" value="{{title}}" class="btn btn-success" style="background-color: #429cae; margin-top: 20px;"/>
 		</form>
 	</div>
+</div>
+<div class="col-sm-5 search_and_share" style="margin-top: 15%;">
+		<div id="user-card" class="panel panel-default pull-left" style="width: 100% ;">
+			<span style="color: black;"><p>Mensajes enviados por:</p>{{identity.name + ' ' + identity.surname}}</span>
+			<div class="avatar pull-left">
+				<img src="{{ url + 'get-image-user/' + identity.image }}" *ngIf="identity.image"/>
+				<img src="assets/user.png" *ngIf="!identity.image"/>
+			</div>
+
+			<div class="name-surname pull-left">
+					<span style="font-size: 12px;">@{{identity.nick}}</span>
+				
+				<p class="nickname"><a [routerLink]="['/perfil',identity._id]" class="username" style="font-size: 13px; color:#429cae;">
+					Ir a mi perfil
+				</a></p>
+				<div class="clearfix"></div>
+			</div>
+
+			<div class="clearfix"></div>
+		</div>
+	</div>
+
 </div>

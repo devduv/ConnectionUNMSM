@@ -23,6 +23,7 @@ function savePublication(req, res){
 	var publication = new Publication();
 	publication.text = params.text;
 	publication.file = 'null';
+	publication.likes = 0;
 	publication.user = req.user.sub;
 	publication.created_at = moment().unix();
 

@@ -3,25 +3,26 @@
 		<div class="publications col-lg-12">
 			<label  style="color: white; font-size:25px !important;"><img src="assets/images/user.png" alt="IMG" style="width: 28px; height: 28px; color: white;"> Perfil del Usuario</label>
 			<hr/>
-<div class="pull-left" align="center">
-			<img style="width: 200px; height: 200px; padding: 5px; margin-right: 10px;" src="{{ url + 'get-image-user/' + user.image }}" *ngIf="user.image"/>
-			<img src="assets/user.png" *ngIf="!user.image" style="width: 200px; height: 200px; padding: 5px; margin-right: 10px;"/>
-		</div>
+
+		<div class="avatar pull-left">
+		<img src="{{ url + 'get-image-user/' + user.image }}" *ngIf="identity.image" style="width: 100%; height: auto;" />
+		<img src="assets/user.png" *ngIf="!user.image"/>
+	</div>
 
 		<div class="pull-left" style="margin-right: 10px;">
 			<div class="label label-default pull-left" *ngIf="followed">
-				Te está siguiendo
+				<span style="font-size: 15px;">Te está siguiendo</span>
 			</div>
 
 			<div class="clearfix"></div>
 			<div class="pull-left">
-				<p class="name" style="color: white;">{{user.name +' '+ user.surname}}</p>
-				<p class="nick" style="color:  #429cae;">{{user.nick}}</p>
+				<p class="name" style="color: white; font-size: 20px;">{{user.name}}<br/>{{user.surname}}</p>
+				<p class="nick  btn btn-success" style="color:white;">@{{user.nick}}</p>
 			</div>
 			<div class="clearfix"></div>
 			
 			<div class="follow pull-left">
-				<button class="btn btn-success" *ngIf="!following" (click)="followUser(user._id)">
+				<button class="btn btn-primary" *ngIf="!following" (click)="followUser(user._id)" style="margin-top: 10px;">
 					Seguir
 				</button>
 				<button 
@@ -30,7 +31,7 @@
 				  (click)="unfollowUser(user._id)"
 				  (mouseenter)="mouseEnter(user._id)"
 				  (mouseleave)="mouseLeave()"
-				  [class.btn-danger]="user._id == followUserOver"
+				  [class.btn-danger]="user._id == followUserOver" style="margin-top: 10px;"
 				 >
 				 	<span *ngIf="user._id == followUserOver; else following">
 						Dejar de seguir
@@ -46,7 +47,7 @@
 		
 		<div class="pull-left" *ngIf="stats" style="margin-left: 15px;">
 			<div class="label label-default pull-left" style="background-color: #abcf00;">
-				Estado del perfil
+				<span style="font-size: 15px;">Estado del perfil</span>
 			</div>
 			<br/>
 			<div style="margin-bottom: 7px;">

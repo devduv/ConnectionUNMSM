@@ -63,7 +63,7 @@
 		</div>
 
 		<!--PAGINACION-->
-		<ul class="pagination pull-right">
+		<ul class="pagination pull-right" style="margin-right: 20px;">
 			<li *ngIf="page > 1"><a [routerLink]="['/gente', prev_page]">Anterior</a></li>
 			<li *ngIf="pages != page"><a [routerLink]="['/gente', next_page]">Siguiente</a></li>
 		</ul>

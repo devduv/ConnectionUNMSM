@@ -11,18 +11,25 @@
 
 					<div>
 						<span class="user-name">
-							<b>{{publication.user.name + ' ' + publication.user.surname }}</b>
-						</span>
+							<b>{{publication.user.name + ' ' + publication.user.surname }}
+			
+					</b>
+						</span>	
+						
 						<br>
 						<span class="date" style="font-size: 12px;">
+							
 							{{ (publication.created_at | amFromUnix) | amLocale:'es' | amTimeAgo }}
 						</span>
 						<hr/>
 					</div>
-					
+
 					<p class="publication-text pull-left" style="padding: 10px;">
 						{{publication.text}}
+
 					</p>
+					
+					
 					<div class="pull-right" *ngIf="publication.user._id == identity._id">
 						
 						&nbsp;
@@ -57,8 +64,11 @@
 						</div>
 					</div>
 
+					
 					<div class="pull-right" *ngIf="publication.file != 'null' ">
-						<button class="btn btn-warning pull-right" (click)="showThisImage(publication._id)" *ngIf="showImage != publication._id">
+						
+					
+						<button class="btn btn-primary pull-right" (click)="showThisImage(publication._id)" *ngIf="showImage != publication._id">
 							<i class="glyphicon glyphicon-picture"> </i> <span>Mostrar imagen</span>
 						</button>
 						<button class="btn btn-danger pull-right" (click)="hideThisImage(publication._id)" *ngIf="showImage == publication._id">
@@ -67,7 +77,7 @@
 					</div>
 					<div class="col-lg-12" *ngIf="publication.file != 'null' && showImage == publication._id">
 						<br/>
-						<img src="{{ url + 'get-image-pub/' + publication.file}}" class="col-lg-12" style="width: 100%; height: auto;"/>
+						<img src="{{ url + 'get-image-pub/' + publication.file}}" class="col-lg-12" style="width: 70%; height: auto;"/>
 					</div>
 				</div>
 

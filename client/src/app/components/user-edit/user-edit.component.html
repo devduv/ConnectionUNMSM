@@ -46,14 +46,14 @@
 			</span>
 		</p>
 
-		<div class="user-image-for-edit" *ngIf="user.image" align="right">
+		<div class="user-image-for-edit" align="right">
 			<img src="{{ url + 'get-image-user/' + user.image }}" style="background-color: white; padding: 5px; margin: 5px;" />
 			<label   class="btn btn-info btn-sm btn-file"  style="font-size: 15px;" > <i class="fa fa-upload "  style="font-size: 18px;" ></i> Subir y cambiar mi foto de perfil
 			<input type="file"  id="fileUpload"  style="display: none; " placeholder="Subir imagen" (change)="fileChangeEvent($event)"  />
 		    </label>
 		</div>
 
-		<input type="submit"  value="Guardar y actualizar datos" class="btn btn-warning btn-lg btn-block" [disabled]="!userEditForm.form.valid" />
+		<input type="submit"  value="Guardar y actualizar datos" class="btn btn-warning btn-lg btn-block" [disabled]="!userEditForm.form.valid" style="margin-top: 15px;" />
 	</form>
 
 </div>
